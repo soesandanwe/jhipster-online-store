@@ -118,10 +118,11 @@
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">{{product.name}}</h5>
                                     <small *ngIf="product.productCategory">
-                                        <a [routerLink]="['../product-category',
-                                     product.productCategory?.id , 'view']"  onclick="event.stopPropagation();event.preventDefault();">
-                                            {{product.productCategory?.name}}
-                                        </a>
+                                       Category:    <a [routerLink]="['../product-category',
+                                                     product.productCategory?.id , 'view']"  >
+                                                            {{product.productCategory?.name}}
+                                                    </a>
+
                                     </small>
                                 </div>
                                 <small class="mb-1">{{product.description}}</small>
@@ -133,38 +134,28 @@
                                     {{product.size}}
                                 </span>
                                 </small>
-
-
-
-
-                   </div>
-
-                        <div *jhiHasAnyAuthority="'ROLE_ADMIN'">
-                            <button type="submit" [routerLink]="['/product',
-                                     product.id , 'edit']"
-                                    onclick="event.stopPropagation();event.preventDefault();"
-                                    class="btn btn-primary btn-sm ">
-                                <span class="fa fa-pencil"></span>
-                                <span class="d-none d-md-inline"
-                                      jhiTranslate="entity.action.edit">Edit</span>
-                            </button>
+                            </div>
+                            <div *jhiHasAnyAuthority="'ROLE_ADMIN'">
+                                <button type="submit" [routerLink]="['/product',
+                                             product.id , 'edit']"
+                                        onclick="event.stopPropagation();event.preventDefault();"
+                                        class="btn btn-primary btn-sm ">
+                                    <span class="fa fa-pencil"></span>
+                                    <span class="d-none d-md-inline"
+                                          jhiTranslate="entity.action.edit">Edit</span>
+                                </button>
                                 <button type="submit" [routerLink]="['/', 'product', { outlets: { popup: product.id + '/delete'} }]"
-                                      replaceUrl="true"
-                                      queryParamsHandling="merge"
-                                      onclick="event.stopPropagation();event.preventDefault();"
-                                     class="btn btn-danger btn-sm ">
+                                        replaceUrl="true"
+                                        queryParamsHandling="merge"
+                                        onclick="event.stopPropagation();event.preventDefault();"
+                                        class="btn btn-danger btn-sm ">
                                     <span class="fa fa-remove"></span>
                                     <span class="d-none d-md-inline"
                                           jhiTranslate="entity.action.delete">Delete</span>
                                 </button>
-                        </div>
-
-
-
+                            </div>
                 </div>
             </a>
-
-
         </div>
     </div>
 </div>
