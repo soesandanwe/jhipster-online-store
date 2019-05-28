@@ -33,9 +33,9 @@
                 <td jhiTranslate="{{'storeApp.Size.' + product.size}}">{{product.size}}</td>
                 <td>
                     <a *ngIf="product.image" (click)="openFile(product.imageContentType, product.image)">
-                        <img [src]="'data:' + product.imageContentType + ';base64,' + product.image" style="max-height: 30px;" alt="product image"/>
+                        <img [src]="'data:' + product.imageContentType + ';base64,' + product.image" style="max-height: 180px;" alt="product image"/>
                     </a>
-                    <span *ngIf="product.image">{{product.imageContentType}}, {{byteSize(product.image)}}</span>
+                   <!-- <span *ngIf="product.image">{{product.imageContentType}}, {{byteSize(product.image)}}</span>-->
                 </td>
                 <td>
                     <div *ngIf="product.productCategory">
