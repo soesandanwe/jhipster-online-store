@@ -10,8 +10,8 @@ node {
     }
 
     stage('clean') {
-        bat "attrib +x mvn"
-        bat "./mvn clean"
+        bat "attrib +x mvnw"
+        bat "./mvnw clean"
     }
 
     stage('install tools') {
