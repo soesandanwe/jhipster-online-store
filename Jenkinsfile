@@ -10,7 +10,7 @@ node {
     }
 
     stage('clean') {
-        bat "chmod +x mvn"
+        bat "attrib +x mvn"
         bat "./mvn clean"
     }
 
