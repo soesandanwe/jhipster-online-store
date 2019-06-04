@@ -101,7 +101,7 @@ public class ProductOrderResource {
     @GetMapping("/product-orders/{id}")
     public ResponseEntity<ProductOrder> getProductOrder(@PathVariable Long id) {
         log.debug("REST request to get ProductOrder : {}", id);
-        Optional<ProductOrder> productOrder = productOrderService.findOne(id);
+        Optional<ProductOrder> productOrder = Optional.of(productOrderService.findOne(id));
         return ResponseUtil.wrapOrNotFound(productOrder);
     }
 
