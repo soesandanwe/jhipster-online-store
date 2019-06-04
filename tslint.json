@@ -1,7 +1,9 @@
 {
     "rulesDirectory": ["node_modules/codelyzer"],
     "extends": ["tslint-config-prettier"],
-
+    "jsRules": {
+        "no-empty": true
+    },
     "rules": {
         "class-name": true,
         "comment-format": [true, "check-space"],
@@ -72,7 +74,7 @@
         "use-life-cycle-interface": true,
         "use-pipe-transform-interface": false,
         "component-class-suffix": true,
-        "directive-class-suffix": true,
+        "directive-class-suffix": true
 
     }
 }
