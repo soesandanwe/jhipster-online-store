@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.swing.text.html.Option;
 import java.util.Optional;
 
 /**
@@ -66,10 +67,10 @@ public class ProductOrderService {
      * @return the entity
      */
     @Transactional(readOnly = true)
-    public ProductOrder findOne(Long id) {
+    public Optional<ProductOrder> findOne(Long id) {
         log.debug("Request to get ProductOrder : {}", id);
         if (SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.ADMIN)) {
-            return productOrderRepository.getOne(id);
+            return productOrderRepository.findById(id);
         }
         else
         {
