@@ -10,8 +10,8 @@ node {
     }
 
     stage('clean') {
-        bat "chmod +x mvnw"
-        bat "./mvnw clean"
+        sh "chmod +x mvnw"
+        sh "./mvnw clean"
     }
 
     stage('install tools') {
