@@ -20,7 +20,8 @@ module.exports = {
     ],
     testResultsProcessor: 'jest-sonar-reporter',
     transformIgnorePatterns: ['node_modules/(?!@angular/common/locales)'],
-    testMatch: ['<rootDir>/src/test/javascript/spec/**/@(*.)@(spec.ts)'],
+    testMatch: ['<rootDir>/src/test/javascript/spec/**/@(*.)@(spec.ts?(x))'],
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     rootDir: '../../../',
     testURL: "http://localhost/"
 };
